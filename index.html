@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ada</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:300,700|Roboto:700|Playfair+Display">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <section class="sidebar">
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="Ada Hot Spring">
+        <h1 class="title siteTitle">Ada</h1>
+      </div>
+      <footer>
+        <p>Designed and coded by Genevieve Masioni</p>
+        <p>&copy; Ada, 2018</p>
+      </footer>
+    </section>
+    <main>
+      <header>
+        <section class="head">
+          <i class="fa fa-bars fa-lg burgerMenu"></i>
+          <ul class="menu primaryMenu">
+            <li><a href="#" title="">Hotel resorts</a></li>
+            <li><a href="#" title="">Hot springs</a></li>
+            <li><a href="#" title="">Spa</a></li>
+            <li><a href="#" title="">Gastronomy</a></li>
+            <li><a href="#" title="">About</a></li>
+          </ul>
+        </section>
+        <section class="secondaryMenu">
+          <div class="menuSection about">
+            <h2 class="title subTitle">About us</h2>
+            <ul class="menu submenu">
+              <li><a href="#" title="">Our story</a></li>
+              <li><a href="#" title="">Our team</a></li>
+              <li><a href="#" title="">Photo gallery</a></li>
+              <li><a href="#" title="">Terms and conditions</a></li>
+            </ul>
+          </div>
+          <div class="menuSection lessons">
+            <h2 class="title subTitle">Lessons</h2>
+            <ul class="menu submenu">
+              <li><a href="#" title="">Individual</a></li>
+              <li><a href="#" title="">Group</a></li>
+              <li><a href="#" title="">Children</a></li>
+            </ul>
+          </div>
+          <div class="menuSection activities">
+            <h2 class="title subTitle">Activities</h2>
+            <ul class="menu submenu">
+              <li><a href="#" title="">Swimming</a></li>
+              <li><a href="#" title="">Massages</a></li>
+              <li><a href="#" title="">Jacuzzi</a></li>
+              <li><a href="#" title="">Hot Springs</a></li>
+            </ul>
+          </div>
+          <div class="menuSection performance">
+            <h2 class="title subTitle">Book vacation</h2>
+            <ul class="menu submenu">
+              <li><a href="#" title="">Day pass</a></li>
+              <li><a href="#" title="">Week pass</a></li>
+              <li><a href="#" title="">Group pass</a></li>
+              <li><a href="#" title="">Deals</a></li>
+            </ul>
+          </div>
+        </section>
+      </header>
+      <article class="heroContent">
+        <section class="heroTitle">
+          <h2 class="title contentTitle">Suround yourself with peace - hot spring in Island</h2>
+        </section>
+        <section class="heroText content">
+          <p>Nam sole orto magnitudine angusti gurgitis sed profundi a transitu
+            arcebantur et dum piscatorios quaerunt lenunculos vel innare temere
+            contextis cratibus parant, effusae legiones, quae hiemabant tunc apud
+            Siden, isdem impetu occurrere veloci. et signis prope ripam locatis
+            ad manus comminus conserendas denseta scutorum conpage semet
+            scientissime praestruebant, ausos quoque aliquos fiducia nandi vel
+            cavatis arborum truncis amnem permeare latenter facillime
+            trucidarunt.
+          </p>
+          <button type="button" name="btnMore" class="btnMore title">Read more</button>
+        </section>
+      </article>
+      <a href="#more" class="scrollDown js-scrollTo"><i class="fa fa-chevron-down fa-lg"></i></a>
+      <article class="heroContent scdContent" id="more">
+        <section class="left">
+          <h2 class="title contentTitle">Your well-being is our priority</h2>
+          <p>Nam sole orto magnitudine angusti gurgitis sed profundi a transitu
+            arcebantur et dum piscatorios quaerunt lenunculos vel innare temere
+            contextis cratibus parant, effusae legiones, quae hiemabant tunc apud
+            Siden, isdem impetu occurrere veloci.
+          </p>
+          <button type="button" name="btnMore" class="btnMore title">About us</button>
+        </section>
+        <section class="content">
+          <img src="assets/images/tom-grimbert.jpg" alt="Femme">
+          <!-- <img src="assets/images/logoWhite.svg" alt="Ada logo"> -->
+        </section>
+      </article>
+    </main>
+
+    <script type="text/javascript">
+
+    const burger = document.querySelector('.burgerMenu');
+    const scdMenu = document.querySelector('.secondaryMenu');
+    const main = document.querySelector('main');
+    const chevronDown = document.querySelector('.js-scrollTo');
+
+    let bool = false;
+    function displaySecondMenu() {
+      let openedIco = 'fa-times';
+      let closedIco = 'fa-bars';
+      let articles = document.querySelectorAll('article');
+      if(bool) {
+        burger.classList.remove(closedIco);
+        burger.classList.add(openedIco);
+        scdMenu.style.display = 'inline-flex';
+        main.classList.add('main_v2');
+        articles.forEach((a) => a.style.display = 'none');
+        chevronDown.style.display = 'none';
+        bool = false;
+      } else {
+        burger.classList.remove(openedIco);
+        burger.classList.add(closedIco);
+        scdMenu.style.display = 'none';
+        main.classList.remove('main_v2');
+        articles.forEach((a) => a.style.display = 'inline-flex');
+        chevronDown.style.display = 'block';
+        bool = true;
+      }
+    }
+
+    function scrollTo() {
+      var page = document.querySelector('#more');
+      var speed = 750;
+      var html = document.querySelector('html');
+      console.log(page.offsetTop);
+      html.animate({scrollTo: page.offsetTop}, speed);
+      return false;
+    }
+
+    const scdContent = document.querySelector('.scdContent');
+    console.log(scdContent);
+
+    burger.addEventListener('click', displaySecondMenu);
+    chevronDown.addEventListener('click', scrollTo);
+
+    </script>
+  </body>
+</html>

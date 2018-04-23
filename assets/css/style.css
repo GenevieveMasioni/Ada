@@ -1,0 +1,251 @@
+/************************************************************
+
+Author: Genevieve Masioni
+Author URI : http://genevievemasioni.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+Tags: hot springs
+
+**************************************************************
+
+Table of Contents:
+
+0. GLOBAL
+1. TITLES
+2. SIDEBAR
+3. MAIN
+4. HEADER
+5. MENUS
+6. CONTENT
+7. ANIMATIONS
+
+**************************************************************/
+
+
+/************************************************
+0.	GLOBAL
+************************************************/
+
+:root {
+  --base-font-size: 16px;
+  --base-font-family: 'Open sans', sans-serif;
+  --base-padding: 1rem;
+  --main-color: #563c3d;
+  --secondary-color: #fff;
+  --bg-color: #090F0466;
+}
+
+html, body {
+  font-size: var(--base-font-size);
+}
+
+body {
+  color: var(--main-color);
+  display: flex;
+  overflow: hidden;
+  margin: 2rem;
+  font-family: var(--base-font-family);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar, main {
+  padding: var(--base-padding);
+}
+
+
+/************************************************
+1.	TITLES
+************************************************/
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  font-family: 'Oswald', 'Open sans', sans-serif;
+}
+
+.siteTitle {
+  width: 100%;
+  text-align: center;
+  text-transform: initial;
+  font-family: 'Playfair Display', 'Open sans', sans-serif;
+  font-weight: lighter;
+}
+
+
+/************************************************
+2.	SIDEBAR
+************************************************/
+
+.sidebar {
+  width: 12%;
+  background: var(--secondary-color);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 3rem;
+}
+
+footer {
+  color: #d7d7d7;
+  font-size: .7rem;
+  text-align: center;
+  position: absolute;
+  width: 9rem;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+
+/************************************************
+3.	MAIN
+************************************************/
+
+main {
+  background: var(--bg-color) url('../images/jeff-sheldon.jpg') no-repeat center;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  color: var(--secondary-color);
+  padding: var(--base-padding) 4rem;
+  width: 88%;
+  height: 41rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.main_v2 {
+  color: var(--main-color);
+  background-color: #ececec;
+}
+
+/************************************************
+4.	HEADER
+************************************************/
+
+header {
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/************************************************
+5.	MENUS
+************************************************/
+
+ul.menu {
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.primaryMenu {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.primaryMenu li {
+  display: inline;
+  margin: 0 var(--base-padding);
+}
+
+.secondaryMenu {
+  display: none;
+  margin-top: 5rem;
+}
+
+.menuSection {
+  margin: var(--base-padding) 2rem;
+}
+
+.secondaryMenu:nth-child(1) {
+  margin-left: 0;
+}
+
+/************************************************
+6.	CONTENT
+************************************************/
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem auto;
+  height: 30rem;
+}
+
+.heroTitle {
+  margin-right: 7rem;
+}
+
+.heroText {
+  width: 40rem;
+}
+
+.contentTitle {
+  font-size: 3.5rem;
+}
+
+.content {
+  font-size: .9rem;
+  font-weight: 300;
+}
+
+.btnMore {
+  border: none;
+  background: var(--secondary-color);
+  padding: var(--base-padding);
+  color: var(--main-color);
+  margin-top: 3rem;
+}
+
+.scrollDown {
+  width: 100%;
+  text-align: center;
+  animation: bouncing .8s infinite alternate;
+}
+
+.scdContent {
+  height: 41rem;
+}
+
+.scdContent .content img {
+  width: 25rem;
+  margin: var(--base-padding);
+  box-shadow: .5rem .5rem #fff;
+}
+
+.left {
+  width: 60%;
+  margin-right: 2rem;
+}
+
+/************************************************
+7.	ANIMATIONS
+************************************************/
+
+@keyframes bouncing {
+  from {
+    transform: translateY();
+  }
+  to {
+    transform: translateY(-1rem);
+  }
+}
